@@ -14,6 +14,7 @@ public class Comment extends Model {
     @Lob
     public String content;
     
+    // ownder by Comment side
     @ManyToOne
     public Post post;
     
