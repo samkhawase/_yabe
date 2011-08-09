@@ -1,3 +1,4 @@
-tmp
-logs
-/eclipse
+tmp/*
+tmp/classes/*
+logs/*
+/eclipse/*
