@@ -1,12 +1,14 @@
 <!DOCTYPE html >
 <html>
     <head>
-        <title>#{get 'title' /}</title>		
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" type="text/css" media="screen" 
             href="@{'/public/stylesheets/main.css'}" />
         <link rel="shortcut icon" type="image/png" 
             href="@{'/public/images/favicon.png'}" />
+        
+        <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+    	
     </head>
     <body>
         
@@ -21,7 +23,7 @@
             </ul>
             <div id="title">
                 <span class="about">About this blog</span>
-                <h1><a href="#">${blogTitle}</a></h1>
+                <h1><a href="@{Application.index()}">${blogTitle}</a></h1>
                 <h2>${blogBaseline}</h2>
             </div>
         </div>

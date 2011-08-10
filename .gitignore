@@ -3,3 +3,4 @@ tmp/classes/*
 logs/*
 /eclipse/*
 /test-result
+/.classpath
