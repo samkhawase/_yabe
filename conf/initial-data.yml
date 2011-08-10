@@ -16,7 +16,7 @@ Post(firstBobPost):
     postedAt:       2009-06-14
     author:         bob
     content:        >
-                    The model has a central position in a Play! application. It is the domain-specific 
+                    Hola! The model has a central position in a Play! application. It is the domain-specific 
                     representation of the information on which the application operates.
                     
                     Martin fowler defines it as:
