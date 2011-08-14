@@ -7,10 +7,14 @@ import play.libs.*;
 import play.mvc.*;
 
 import java.util.*;
+import org.apache.log4j.*;
+import org.apache.log4j.Logger;
 
 import models.*;
 
 public class Application extends Controller {
+	
+	private static Logger logger = LogManager.getLogger(Application.class);
 
     @Before
     static void addDefaults() {
@@ -31,6 +35,7 @@ public class Application extends Controller {
         render(post);
         String randomID = Codec.UUID();
         render(post, randomID);
+        //logger.info("randomID from show(): "+randomID);
     }
     
     public static void postComment(
@@ -41,12 +46,17 @@ public class Application extends Controller {
             String randomID) 
     {
         Post post = Post.findById(postId);
+        // check if the captcha is not null
+        logger.info("code is: "+code.toString());
+        logger.info("Captcha Required: "+ Cache.get(randomID));
+        
         validation.equals(
                 code, Cache.get(randomID)
             ).message("Invalid code. Please type it again");
         
         if (validation.hasErrors()) {
-            render("Application/show.html", post);
+        	Cache.delete(randomID);
+            render("Application/show.html", post,randomID);
         }
         post.addComment(author, content);
         flash.success("Thanks for posting %s", author);
@@ -59,6 +69,7 @@ public class Application extends Controller {
         String code = captcha.getText("#E4EAFD");
         Cache.set(id, code, "10mn" );
         renderBinary(captcha);
+//        logger.info("Captcha set: "+captcha.getText());
     }
 
     
