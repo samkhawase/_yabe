@@ -3,6 +3,7 @@
 	<classpathentry excluding="views/**" kind="src" path="app"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="src" path="crud"/>
+	<classpathentry kind="src" path="secure"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Play!"/>
 	<classpathentry kind="output" path="eclipse/classes"/>
