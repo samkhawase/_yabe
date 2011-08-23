@@ -3,16 +3,22 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class Post extends Model {
 
+	@Required
 	public String title;
+	@Required
 	public Date postedAt;
 	
 	@Lob
+	@Required
+	@MaxSize(10000)
 	public String content;
 
+	@Required
 	@ManyToOne
 	public User author;
 	
@@ -58,5 +64,8 @@ public class Post extends Model {
 	            "select distinct p from Post p join p.tags as t where t.name in (:tags) group by p.id, p.author, p.title, p.content,p.postedAt having count(t.id) = :size"
 	    ).bind("tags", tags).bind("size", tags.length).fetch();
 	}
-
+	
+	public String toString(){
+		return title;
+	}
 }
