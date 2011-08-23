@@ -1,6 +1,6 @@
 tmp/*
 tmp/classes/*
 logs/*
-/eclipse/*
-/test-result
-/.classpath
+test-result/*
+eclipse/*
+.classpath

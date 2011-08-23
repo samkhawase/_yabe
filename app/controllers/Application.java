@@ -72,5 +72,10 @@ public class Application extends Controller {
 //        logger.info("Captcha set: "+captcha.getText());
     }
 
+    // list tags 
+    public static void listTagged(String tag) {
+        List<Post> posts = Post.findTaggedWith(tag);
+        render(tag, posts);
+    }
     
 }
