@@ -27,6 +27,10 @@ Post(firstBobPost):
     title:          About the model layer
     postedAt:       2009-06-14
     author:         bob
+    tags:           
+                    - play
+                    - architecture
+                    - mvc    
     content:        >
                     Hola! The model has a central position in a Play! application. It is the domain-specific 
                     representation of the information on which the application operates.
