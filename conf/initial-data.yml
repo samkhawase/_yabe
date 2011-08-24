@@ -15,13 +15,19 @@ Tag(mvc):
 User(bob):
     email:          bob@gmail.com
     password:       secret
-    fullname:       Bob
+    fullName:       Bob
     isAdmin:        true
     
 User(jeff):
     email:          jeff@gmail.com
     password:       secret
-    fullname:       Jeff    
+    fullName:       Jeff    
+
+User(Sam):
+    email:          sam@gmail.com
+    password:       secret
+    fullName:       Sam 
+    isAdmin:        true
     
 Post(firstBobPost):
     title:          About the model layer
